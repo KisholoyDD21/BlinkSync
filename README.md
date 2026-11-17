@@ -1,6 +1,14 @@
-# BlinkSync
+<p align="center">
+  <img src="public/icon/128.png" width="96" height="96" alt="BlinkSync logo" />
+  <h1 align="center">BlinkSync</h1>
+  <p align="center">
+    <strong>Synchronize verified LeetCode Accepted submissions to your GitHub repository.</strong>
+    <br />
+    <em>Local-first · Privacy-first · Atomic Git Commits</em>
+  </p>
+</p>
 
-A local-first Manifest V3 extension and lightweight distribution site for synchronizing verified LeetCode Accepted submissions to GitHub.
+---
 
 > **Status: engineering scaffold / private alpha.** The GitHub Git Data API path, storage model, UI, README generator, retry queue, and tests are implemented. LeetCode's submission GraphQL operation and page network signatures are undocumented integration contracts and must be verified against live, permitted test accounts before any public release. This repository is not yet Chrome Web Store submission-ready.
 
