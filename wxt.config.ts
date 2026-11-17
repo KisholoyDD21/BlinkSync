@@ -26,7 +26,7 @@ export default defineConfig({
     },
     web_accessible_resources: [
       {
-        resources: ['leetcode-main-world.js'],
+        resources: ['leetcode-main-world.js', 'icon/*'],
         matches: ['https://leetcode.com/*'],
       },
     ],
