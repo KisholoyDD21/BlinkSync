@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <title>404 — Page Not Found | BlinkSync</title>
+    <meta name="description" content="The page you are looking for does not exist on BlinkSync." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <style>
+      :root {
+        --bg-primary: #0d1117;
+        --bg-card: #161b22;
+        --border: #30363d;
+        --text-primary: #f0f6fc;
+        --text-secondary: #8b949e;
+        --accent-lc: #ffa116;
+        --accent-lc-hover: #ff9b00;
+        --accent-gh: #58a6ff;
+        --radius-sm: 6px;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: radial-gradient(circle at 50% 20%, #161d2b 0%, #0d1117 60%), #0d1117;
+        color: var(--text-primary);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 48px 36px;
+        max-width: 480px;
+        text-align: center;
+        box-shadow: 0 16px 36px rgba(0,0,0,0.5);
+      }
+      .code {
+        font-size: 72px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        background: linear-gradient(135deg, var(--accent-lc) 0%, var(--accent-gh) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0 0 12px;
+      }
+      h1 {
+        font-size: 22px;
+        margin: 0 0 12px;
+        letter-spacing: -0.02em;
+      }
+      p {
+        color: var(--text-secondary);
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0 0 28px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--accent-lc);
+        color: #0d1117;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 11px 20px;
+        border-radius: var(--radius-sm);
+        text-decoration: none;
+        transition: background 150ms ease;
+      }
+      .btn:hover {
+        background: var(--accent-lc-hover);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="code">404</div>
+      <h1>Page Not Found</h1>
+      <p>The page you requested could not be located. Head back to the homepage to learn about BlinkSync.</p>
+      <a href="/" class="btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Return to BlinkSync</span>
+      </a>
+    </div>
+  </body>
+</html>

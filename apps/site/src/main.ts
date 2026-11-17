@@ -17,12 +17,50 @@ const updateDownloadText = (text: string) => {
 
 if (chromeLink) chromeLink.href = chromeStoreUrl;
 if (firefoxLink) firefoxLink.href = firefoxStoreUrl;
+
 if (/Firefox\//.test(ua)) {
-  if (browserMessage) browserMessage.textContent = 'Firefox detected. Use the Firefox build.';
-  if (download) { download.href = firefoxStoreUrl; updateDownloadText('Get Firefox build'); }
+  if (browserMessage) browserMessage.textContent = 'Firefox detected. Use the signed Firefox build.';
+  if (download) {
+    download.href = firefoxStoreUrl;
+    updateDownloadText('Add to Firefox — It’s Free');
+  }
 } else if (/Chrome\//.test(ua) && !/Edg\//.test(ua)) {
-  if (browserMessage) browserMessage.textContent = 'Chrome detected. Use the Chrome Web Store or signed release package.';
-  if (download) { download.href = chromeStoreUrl; updateDownloadText('Get BlinkSync for Chrome'); }
+  if (browserMessage) browserMessage.textContent = 'Chromium detected. Direct install via Chrome Web Store or signed release.';
+  if (download) {
+    download.href = chromeStoreUrl;
+    updateDownloadText('Add to Chrome — It’s Free');
+  }
 } else if (browserMessage) {
-  browserMessage.textContent = 'Browser not identified. Choose a supported build below.';
+  browserMessage.textContent = 'Choose your browser package below.';
 }
+
+// ─── Cookie Consent Banner ───
+const banner = document.querySelector<HTMLElement>('#cookie-banner');
+const acceptBtn = document.querySelector<HTMLButtonElement>('#cookie-accept');
+
+if (banner && acceptBtn) {
+  const consentGiven = localStorage.getItem('blinksync_cookie_consent');
+  if (!consentGiven) {
+    // Show banner after brief delay
+    setTimeout(() => {
+      banner.classList.remove('hidden');
+    }, 800);
+  }
+
+  acceptBtn.addEventListener('click', () => {
+    localStorage.setItem('blinksync_cookie_consent', 'true');
+    banner.classList.add('hidden');
+  });
+}
+
+// ─── Privacy-Preserving Analytics (Zero-Cookie, Respects Do-Not-Track) ───
+const logPageView = () => {
+  if (navigator.doNotTrack === '1') return;
+  // Lightweight client-side session ping
+  const page = window.location.pathname;
+  if (window.console && import.meta.env.DEV) {
+    console.debug(`[BlinkSync Privacy Analytics] Page view: ${page}`);
+  }
+};
+
+logPageView();

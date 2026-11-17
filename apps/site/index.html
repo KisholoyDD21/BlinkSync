@@ -3,15 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="BlinkSync securely synchronizes verified LeetCode submissions to your GitHub repository." />
-    <meta property="og:title" content="BlinkSync — Your accepted solutions, in GitHub" />
-    <meta property="og:description" content="A browser extension that verifies accepted LeetCode submissions, creates clean atomic Git commits, and keeps a recoverable local sync queue." />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    
+    <!-- Primary Meta Tags -->
+    <title>BlinkSync — Sync Verified LeetCode Submissions to GitHub</title>
+    <meta name="title" content="BlinkSync — Sync Verified LeetCode Submissions to GitHub" />
+    <meta name="description" content="A local-first browser extension that verifies accepted LeetCode submissions, creates clean atomic Git commits, and synchronizes code directly to your GitHub repository." />
+    <meta name="keywords" content="LeetCode, GitHub, synchronization, DSA, algorithms, browser extension, coding, git, automation, local-first" />
+    <meta name="author" content="Kisholoy Paul" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://blinksync.dev/" />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/icon.png" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="https://blinksync.dev/" />
+    <meta property="og:title" content="BlinkSync — Sync Verified LeetCode Submissions to GitHub" />
+    <meta property="og:description" content="Privacy-first developer extension. Verified LeetCode submissions committed atomically to your GitHub repository with zero telemetry." />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://blinksync.dev/" />
+    <meta name="twitter:title" content="BlinkSync — Sync Verified LeetCode Submissions to GitHub" />
+    <meta name="twitter:description" content="Verified LeetCode solutions committed directly to GitHub with zero telemetry and session-only tokens." />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <!-- Icons & Manifest -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/icon.png" />
-    <title>BlinkSync — Your accepted solutions, in GitHub</title>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "BlinkSync",
+        "operatingSystem": "Chrome, Chromium, Firefox",
+        "applicationCategory": "DeveloperApplication",
+        "description": "Browser extension to synchronize verified LeetCode accepted submissions to GitHub repositories.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
   </head>
   <body>
     <main id="app">
@@ -25,6 +63,7 @@
           <a href="#preview">Preview</a>
           <a href="#setup">Setup</a>
           <a href="/privacy.html">Privacy</a>
+          <a href="/terms.html">Terms</a>
           <a class="nav-cta" href="https://github.com/KisholoyDD21/BlinkSync" target="_blank" rel="noreferrer">
             <svg class="gh-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
@@ -46,11 +85,12 @@
           <p class="intro">A privacy-first developer extension that bridges LeetCode and GitHub. Verifies accepted verdicts via official GraphQL queries, generates clean atomic Git commits, and stores offline solutions in durable local storage.</p>
           
           <div class="actions">
-            <a class="button primary" id="download" href="https://github.com/KisholoyDD21/BlinkSync/releases/latest">
-              <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Distinct Primary CTA -->
+            <a class="button primary hero-cta-btn" id="download" href="https://github.com/KisholoyDD21/BlinkSync/releases/latest">
+              <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
               </svg>
-              <span class="btn-text">Download extension</span>
+              <span class="btn-text">Add to Chrome — It's Free</span>
             </a>
             <a class="button secondary" href="https://github.com/KisholoyDD21/BlinkSync" target="_blank" rel="noreferrer">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
@@ -88,7 +128,7 @@
           <div class="preview-card">
             <div class="preview-header">
               <div class="preview-brand">
-                <img src="/icon.png" alt="BlinkSync Icon" class="preview-icon" width="36" height="36" />
+                <img src="/icon.png" alt="BlinkSync Logomark" class="preview-icon" width="36" height="36" />
                 <div>
                   <div class="preview-eyebrow">
                     <span class="text-lc">LEETCODE</span> → <span class="text-gh">GITHUB</span>
@@ -195,7 +235,7 @@
       <section class="icon-showcase" id="preview">
         <div class="showcase-content">
           <div class="showcase-icon-box">
-            <img src="/icon-512.png" alt="BlinkSync Brand Icon" class="showcase-img" />
+            <img src="/icon-512.png" alt="BlinkSync High Resolution Master Brand Icon" class="showcase-img" loading="lazy" width="200" height="200" />
           </div>
           <div class="showcase-text">
             <p class="kicker">
@@ -205,15 +245,15 @@
             <p>The BlinkSync mark integrates continuous sync orbit arrows with an electric lightning bolt and developer code brackets (<code>&lt; &gt;</code>) wrapped in a neon-cyan cyber aesthetic. Recognizable whether pinned in your browser toolbar or featured on the Chrome Web Store.</p>
             <div class="icon-specs">
               <div class="spec-item">
-                <img src="/icon.png" width="32" height="32" alt="32px icon" />
+                <img src="/icon.png" width="32" height="32" alt="32px toolbar icon" loading="lazy" />
                 <span>32px Toolbar</span>
               </div>
               <div class="spec-item">
-                <img src="/icon.png" width="48" height="48" alt="48px icon" />
+                <img src="/icon.png" width="48" height="48" alt="48px extension store icon" loading="lazy" />
                 <span>48px Store</span>
               </div>
               <div class="spec-item">
-                <img src="/icon.png" width="64" height="64" alt="64px icon" />
+                <img src="/icon.png" width="64" height="64" alt="128px high density display icon" loading="lazy" />
                 <span>128px HiDPI</span>
               </div>
             </div>
@@ -261,11 +301,12 @@
 
       <footer>
         <div class="footer-brand">
-          <img src="/icon.png" width="22" height="22" alt="Logo" />
+          <img src="/icon.png" width="22" height="22" alt="BlinkSync Logo thumbnail" />
           <span>BLINKSYNC · Local-first by design</span>
         </div>
         <div class="footer-links">
           <a href="/privacy.html">Privacy policy</a>
+          <a href="/terms.html">Terms & Conditions</a>
           <a href="https://github.com/KisholoyDD21/BlinkSync" target="_blank" rel="noreferrer" class="footer-gh-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
@@ -274,6 +315,19 @@
           </a>
         </div>
       </footer>
+
+      <!-- Privacy & Cookie Consent Banner -->
+      <div id="cookie-banner" class="cookie-banner hidden" role="dialog" aria-live="polite" aria-label="Cookie and Privacy Consent">
+        <div class="cookie-content">
+          <div class="cookie-text">
+            <strong>🔒 Privacy First:</strong> This site uses strictly essential local browser storage to remember your build preference. No tracking cookies or advertising telemetry.
+          </div>
+          <div class="cookie-actions">
+            <button id="cookie-accept" class="cookie-btn primary" type="button">Got it</button>
+            <a href="/privacy.html" class="cookie-link">Read Policy</a>
+          </div>
+        </div>
+      </div>
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
