@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BlinkSync securely synchronizes verified LeetCode submissions to your GitHub repository." />
+    <title>BlinkSync — Your accepted solutions, in GitHub</title>
+  </head>
+  <body>
+    <main id="app">
+      <nav><a class="brand" href="#top">BLINK<span>SYNC</span></a><a href="/privacy.html">Privacy</a><a href="https://github.com/KisholoyDD21/BlinkSync/releases">Releases</a></nav>
+      <section class="hero" id="top">
+        <p class="kicker">LEETCODE → GITHUB · LOCAL-FIRST</p>
+        <h1>Accepted once.<br/><em>Preserved properly.</em></h1>
+        <p class="intro">A browser extension that verifies accepted submissions, creates clean atomic Git commits, and keeps a recoverable local sync queue.</p>
+        <div class="actions"><a class="button primary" id="download" href="https://github.com/KisholoyDD21/BlinkSync/releases/latest">Download extension</a><a class="button secondary" href="#setup">How it works</a></div>
+        <p class="browser-message" id="browser-message">Choose your browser build below.</p>
+      </section>
+      <section class="features"><article><b>01 / Verified source</b><p>Fetch the actual accepted submission instead of trusting whichever code happens to be in the editor.</p></article><article><b>02 / Atomic commit</b><p>Solution and README share one Git commit through the Git Data API.</p></article><article><b>03 / Recovery built in</b><p>Idempotency, retry queue, variant handling, and contest-safe release.</p></article></section>
+      <section id="setup" class="setup"><p class="kicker">GET STARTED</p><h2>Three steps. Your repository.</h2><ol><li><strong>Install</strong><span>Download the signed-off browser package or install from the browser extension store.</span></li><li><strong>Connect GitHub</strong><span>Create a fine-grained token for one repository with Contents read/write access.</span></li><li><strong>Solve on LeetCode</strong><span>On Accepted, BlinkSync verifies the submission and synchronizes it to your selected branch.</span></li></ol></section>
+      <section class="downloads"><h2>Choose a browser</h2><a id="chrome-link" href="https://github.com/KisholoyDD21/BlinkSync/releases/latest">Chrome package / Web Store</a><a id="firefox-link" href="https://github.com/KisholoyDD21/BlinkSync/releases/latest">Firefox package</a><p>No signed browser package has been published yet.</p></section>
+      <footer><span>BLINKSYNC · Local-first by design</span><a href="/privacy.html">Privacy policy</a><a href="https://github.com/KisholoyDD21/BlinkSync">Source code</a></footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

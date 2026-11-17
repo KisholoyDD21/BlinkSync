@@ -1,0 +1,33 @@
+{
+  "name": "blinksync",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "size": "node scripts/size-report.mjs",
+    "typecheck": "wxt prepare && tsc --noEmit",
+    "site:dev": "npm --prefix apps/site run dev",
+    "site:build": "npm --prefix apps/site run build",
+    "ci": "npm run typecheck && npm test && npm run build",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "wxt": "^0.21.5"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.1.32",
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1",
+    "vite": "^6.3.4"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
