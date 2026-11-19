@@ -23,7 +23,7 @@
 - Remote blob SHA comparison, submission ledger, in-flight de-duplication, branch fast-forward update (`force: false`), and README links for known solution variants.
 - Durable IndexedDB retry/contest queue (including submission-ID-only recovery when LeetCode is temporarily offline), manual failed-item retry, optional scheduled release, and bounded local sync history.
 - Language extension map, safe path templating, local complexity heuristics, README generation (full problem statement excluded unless explicitly enabled), and opt-in spaced repetition with an in-page review action.
-- Popup settings, local health dashboard, static download/distribution site and privacy-policy draft.
+- Popup settings, local health dashboard, and privacy-policy draft.
 
 ## Important design choices
 
@@ -49,7 +49,7 @@ npm install  # postinstall runs wxt prepare and generates .wxt types
 npm run dev
 ```
 
-WXT prints the unpacked development directory. Open `chrome://extensions`, enable Developer mode, and load the generated Chrome MV3 development output directory. Use the exact path printed by WXT (normally `.output/chrome-mv3-dev`).
+WXT prints the unpacked development directory. Open `chrome://extensions`, enable Developer mode, and load the generated Chrome MV3 development output directory (`.output/chrome-mv3-dev`).
 
 Production build:
 
@@ -67,7 +67,7 @@ Firefox build (separate QA required):
 npm run build:firefox
 ```
 
-The build emits a generated `manifest.json` in the output directory. Do not manually edit the generated manifest; update `wxt.config.ts` instead. A reference manifest is in `docs/manifest.reference.json`.
+The build emits a generated `manifest.json` in the output directory (`.output/chrome-mv3`). Do not manually edit the generated manifest; update `wxt.config.ts` instead. A reference manifest is in `docs/manifest.reference.json`.
 
 ## Configure
 
@@ -80,19 +80,6 @@ The build emits a generated `manifest.json` in the output directory. Do not manu
 
 Default path: `{difficulty}/{problemNumber}-{problemSlug}/solution.{extension}`.
 Supported placeholders: `{difficulty}`, `{problemNumber}`, `{problemSlug}`, `{extension}`, `{language}`.
-
-## Build the distribution website
-
-```bash
-cd apps/site
-npm install
-npm run dev
-npm run build
-```
-
-Set `VITE_CHROME_STORE_URL` and `VITE_FIREFOX_ADDON_URL` before deployment when store listings are available. Add a verified support address, publish the privacy policy at a stable HTTPS URL, and upload the extension only after the release checklist is complete.
-
-The site is static: it does not receive submissions, source code, GitHub tokens, or sync telemetry.
 
 ## OAuth status
 
@@ -119,15 +106,14 @@ entrypoints/
 src/
   background/               LeetCode, GitHub, storage, sync services
   shared/                   types, validators, path, README, analyzer
-apps/site/                  static distribution website
-
+tests/                      vitest test suite
 docs/                       architecture, error matrix, test plan, release guide
 ```
 
 ## Security and store readiness
 
-Read `docs/PRIVACY.md`, `docs/ERROR-MATRIX.md`, and `docs/STORE-RELEASE.md`. Chrome Web Store submission requires truthful data-use disclosure, an accessible privacy policy, narrow permissions, user consent, support contact details, and store assets. Replace the privacy-policy draft with a reviewed policy that matches the exact release build.
+Read `docs/PRIVACY.md`, `docs/ERROR-MATRIX.md`, and `docs/STORE-RELEASE.md`. Chrome Web Store submission requires truthful data-use disclosure, an accessible privacy policy, narrow permissions, user consent, support contact details, and store assets.
 
 ## License
 
-This project currently has no license file. All rights are reserved by default; add a license before permitting reuse or distribution. Do not distribute LeetCode-proprietary content except as permitted by LeetCode's terms and the user's rights.
+MIT License. See [LICENSE](LICENSE).

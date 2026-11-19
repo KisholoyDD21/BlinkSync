@@ -12,8 +12,6 @@
     "test:watch": "vitest",
     "size": "node scripts/size-report.mjs",
     "typecheck": "wxt prepare && tsc --noEmit",
-    "site:dev": "npm --prefix apps/site run dev",
-    "site:build": "npm --prefix apps/site run build",
     "ci": "npm run typecheck && npm test && npm run build",
     "postinstall": "wxt prepare"
   },
