@@ -13,7 +13,9 @@
     "size": "node scripts/size-report.mjs",
     "typecheck": "wxt prepare && tsc --noEmit",
     "ci": "npm run typecheck && npm test && npm run build",
-    "postinstall": "wxt prepare"
+    "postinstall": "wxt prepare",
+    "orphix": "orphix",
+    "orphix:clean": "orphix --clean"
   },
   "dependencies": {
     "wxt": "^0.21.5"
